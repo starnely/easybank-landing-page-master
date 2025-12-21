@@ -1,0 +1,306 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+/* General reset: removes default browser padding & margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body main{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+/*Header section with navbar inside-->*/
+.my-header{
+    width: 100%;
+    background-color: lightblue;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+}
+.logo{
+    margin-left: 50px;
+    height: 50px
+}
+
+/*making nav bar link responsive*/
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.nav-links:last-child{
+    margin-right: 0;
+}
+.nav-links .nav-item{
+    margin: 0 20px;
+    list-style-type: none;
+    font-size: 3rem;
+}
+.nav-links .nav-item .link{
+    text-decoration: none; /* Removes default underline */
+    color: #333;
+    padding: 10px 0; /* Gives space for the dash below */
+    display: block;
+    position: relative;/* Crucial for positioning the ::after element */
+}
+
+/* Creating the Green Dash (Pseudo-element) */
+.nav-links .nav-item .link::after{
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    width: 0; /* Start with zero width */
+    height: 5px; /* Thickness of the dash */
+    display: block;
+    margin-top: 5px; /* Spacing between text and dash */
+    background: green; /* The color of the dash */
+    transition: width 0.3s ease-out; /* Smooth transition for the width change */
+    left: 0; /* Aligns the dash to the left of the link text */
+    /* Alternative for center alignment: left: 50%; transform: translateX(-50%); */
+}
+/* The Hover Effect: Expand the Dash */
+.nav-links .nav-item .link:hover::after {
+    width: 100%; /* Expands the dash to full width of the link */
+}
+
+/* invite Buton*/
+.invite1-btn{
+    background-color:hsl(136, 65%, 51%) ;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 38px;
+    margin-right: 80px;
+    cursor: pointer;
+    font-size: 34px;
+}
+
+/* section one*/
+.section1{
+  width: 100%;               /* Full width of laptop */
+  max-width: 100%;           /* Prevent shrinking */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 90px;             /* Space inside the section */
+  overflow: hidden;          /* Hide overflow from overlapping images */
+  box-sizing: border-box;
+  /* Optional (remove if not needed) */
+}
+.section1-1-container{
+    width: 45%;
+}
+.section1-1-container h1{
+    font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.section1-1-container .explanation{
+    line-height: 1.6;
+    color: hsl(233, 8%, 62%);
+    margin-bottom: 30px;
+    font-size: 3rem;
+    
+}
+.invite2-btn{
+    background-color:green ;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 38px;
+    margin-right: 80px;
+    cursor: pointer;
+    font-size: 34px;
+}
+.section1-2-container{
+    position: relative;
+    width: 55%;
+    height: 500px;   /* Small, controlled height */
+    overflow: visible;
+
+}
+.intro-image1{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.intro-image2{
+   width: 90%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
+/*section2*/
+.section2{
+    background-color: rgb(248, 244, 244)
+}
+.section2-top-container{
+    padding-left: 90px;
+}
+.section2-top-container h2{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    padding-top: 70px;
+    color: rgb(61, 59, 59);
+}
+.section2-top-container p{
+    font-size: 3rem;
+    color: gray;
+}
+.section2-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:2rem;
+    padding: 90px 90px;
+}
+.section2-container {
+    width: 100%;
+}
+.section2-container .section2-images{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+.section2-container h3{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.section2-container p{
+    font-size: 34px;
+    line-height: 1.8;
+    color: gray;
+}
+
+/*section3*/
+.article{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    padding-left: 90px;
+    padding-top: 90px;
+    color: rgb(61, 59, 59);;
+}
+.section3-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 90px 90px;
+}
+.image-wrapper{
+      /* This ensures all wrappers have the same height as the tallest one in the row */
+  height: 400px; /* Or any fixed or responsive height you desire, e.g., 20vh */
+  overflow: hidden; /* Hides the cropped parts of the image */
+  margin-bottom: 40px;
+}
+.section3-images{
+    width: 100%;
+    height: 100%;
+    /* Scales the image to cover the entire container while maintaining aspect ratio */
+    object-fit: cover;
+    /* Centers the image within the container */
+    object-position: center;
+}
+.article-text p{
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+.article-text .h3{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.h3-link{
+    color: rgb(48, 46, 46);
+    text-decoration: none;
+}
+.h3-link:hover{
+    color: #16bd16;
+}
+.article-text p{
+    font-size: 2rem;
+    color: gray;
+}
+
+
+/* footer section*/
+.bank-footer{
+    background-color: rgb(33, 33, 54);
+    padding: 5px 20px 30px 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bank-footer p{
+    color: white;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+.logo-and-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+    margin: 0;
+}
+.footer-logo{
+    margin-bottom: 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.image-link .footer-icon-image {
+    /* Initial color (white) */
+    fill: #FFFFFF;
+    /* Smooth transition effect */
+    transition: fill 0.3s ease;
+    height: 40px;
+}
+
+.image-link:hover .footer-icon-image {
+    fill: #00FF00;  
+}
+
+.footer-item{
+    margin:15px 0;
+}
+
+.footer-link:hover{
+    color: greenyellow;
+    transition: width 0.3s ease-out; /* Smooth transition for the width change */
+}
+
+.footer-navs, .footer-nav-links li a{
+    color: white;
+    text-decoration: 0;
+    list-style-type: none;
+    font-size: 2rem;
+}
+.footer-navs, .footer-nav-links li {
+    list-style-type: none;
+}
+.button-and-copyrights{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer-copyrigh{
+    margin-right: 60px;
+    margin-top: 20px;
+}
+
