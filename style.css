@@ -6,11 +6,15 @@
 *::before {
     box-sizing: border-box;
 }
-body main{
-    font-family: Arial, Helvetica, sans-serif;
+body, p {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 1440px;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    
 }
 
 /*Header section with navbar inside-->*/
@@ -24,7 +28,7 @@ header{
 }
 
 .my-header{
-    max-width: 1200px;
+    max-width: 1440px;
     margin: auto;
     padding: 1rem 4rem;
 
@@ -59,7 +63,7 @@ header{
 }
 .nav-bar .nav-links .nav-item .link{
     text-decoration: none; /* Removes default underline */
-    color: #333;
+    color: hsl(233, 26%, 24%);
     padding: 2rem 0.2rem; /* Gives space for the dash below */
 
     position: relative;
@@ -73,7 +77,7 @@ header{
     height: 3px; /* Thickness of the dash */
     display: block;
     margin-top: 5px; /* Spacing between text and dash */
-    background: green; /* The color of the dash */
+    background: hsl(136, 65%, 51%); /* The color of the dash */
     transition: width 0.3s ease-out; /* Smooth transition for the width change */
     left: 0; /* Aligns the dash to the left of the link text */
     /* Alternative for center alignment: left: 50%; transform: translateX(-50%); */
@@ -87,8 +91,8 @@ header{
 .invite1-btn, 
 .invite2-btn, 
 .invite3-btn{
-    background:linear-gradient(135deg, #31d35c, #2bb7da);
-    color: #fff;
+    background:linear-gradient(135deg, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    color: hsl(0, 0%, 100%);
     padding: 0.7rem 1.5rem;
     border-radius: 25px;
     cursor: pointer;
@@ -104,13 +108,13 @@ header{
 
 /* section one*/
 .section1{
-    background-color: rgb(243, 243, 243);      
+    background-color: hsl(220, 16%, 96%);      
     padding-left: 4rem;
     overflow: visible;
 }
 
 .section1-container{
-    max-width: 1200px;      
+    max-width: 1440px;      
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -164,11 +168,11 @@ header{
 
 .section2-top-container h2{
     font-size: 1.4rem;
-    color: rgb(61, 59, 59);
+    color: hsl(233, 26%, 24%);
 }
 .section2-top-container p{
     font-size: 1rem;
-    color: gray;
+    color: hsl(233, 8%, 62%);
 }
 .section2-grid{
     display: grid;
@@ -185,18 +189,18 @@ header{
 }
 .section2-container p{
     font-size: 1rem;
-    color: gray;
+    color: hsl(233, 8%, 62%);
 }
 
 /*section3*/
 .section3{
     padding: 1rem 5rem;
-    background-color: rgb(243, 243, 243);
+    background-color: hsl(220, 16%, 96%);
 }
 .article{
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: rgb(61, 59, 59);;
+    color: hsl(233, 26%, 24%);
 }
 .section3-grid{
     display: grid;
@@ -221,7 +225,7 @@ header{
     margin-bottom: 0.8rem;
 }
 .h3-link{
-    color: rgb(48, 46, 46);
+    color: hsl(233, 26%, 24%);
     text-decoration: none;
 }
 .h3-link:hover{
@@ -229,13 +233,13 @@ header{
 }
 .article-text p{
     font-size: 1rem;
-    color: gray;
+    color: hsl(233, 8%, 62%);
 }
 
 
 /* footer section*/
 .bank-footer{
-    background-color: rgb(33, 33, 54);
+    background-color: hsl(233, 26%, 24%);
     padding: 0.5rem 5rem;
     width: 100%;
     display: flex;
@@ -244,7 +248,7 @@ header{
 }
 
 .bank-footer p{
-    color: white;
+    color: hsl(0, 0%, 100%);
     font-size: 1rem;
 }
 .logo-and-icons{
@@ -271,13 +275,13 @@ nav{
     gap: 0.75rem 2rem;
 }
 .footer-nav a{
-    color: white;
+    color: hsl(0, 0%, 100%);
     text-decoration: none;
     font-size: 1rem;
 }
 
 .footer-nav a:hover{
-    color: greenyellow;
+    color: hsl(136, 65%, 51%);
     transition: width 0.3s ease-out; /* Smooth transition for the width change */
 }
 /*FOOTER BUTTON AND COPYRIGHTS*/
