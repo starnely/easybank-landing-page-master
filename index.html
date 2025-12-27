@@ -14,9 +14,13 @@
 
   <body>
   <!--Header section with navbar inside-->
-    <header class="my-header">
-        <div class="main-logo">
+    <header>
+      <div class="my-header">
+        <div class="logo-container">
           <img class="logo" src="images/logo.svg" alt="Easybank Logo">
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          ☰
         </div>
         <nav class="nav-bar">
           <ul class="nav-links">
@@ -40,31 +44,38 @@
         <a href="#">
           <button class="invite1-btn">Request Invite</button>
         </a>
+      </div> 
     </header>
 
+    
   <main>
   <!--SECTION ONE-->
    <section class="section1">
-      <div class="section1-1-container">
-        <h1>
-            Next generation digital banking
-        </h1>
-        <p class="explanation">
-            Take your financial life online. Your Easybank account
-            will be a one-stop-shop 
-            for spending, saving,
-            budgeting, investing, and much more.
-        </p>
-        <a href="#">
-          <button class="invite2-btn">Request Invite</button>
-        </a>
-      </div>
-
-      <div class="section1-2-container">
+      <div class="section1-container">
+        <!--SECTION1 LEFT PART-->
+          <div class="section1-container-left">
+              <h1>
+                Next generation digital banking
+              </h1>
+              <p class="explanation">
+                  Take your financial life online. Your Easybank account
+                  will be a one-stop-shop 
+                  for spending, saving,
+                  budgeting, investing, and much more.
+              </p>
+              <a href="#">
+                <button class="invite2-btn">Request Invite</button>
+              </a>
+          </div>
+        <!--SECTION1 RIGHT PART-->
+        <div class="section1-container-right">
           <img class="intro-image1" src="images/bg-intro-desktop.svg" alt=""> 
           <img class="intro-image2" src="images/image-mockups.png" alt="">
+        </div>
       </div>
     </section>
+
+
 
 
 <!--SECTION 2-->
@@ -118,7 +129,7 @@
 
 <!--SECTION 3-->
     <section class="section3">
-      <p class="article">Latest Articles</p>
+      <h2 class="article">Latest Articles</h2>
 
       <div class="section3-grid">
         <div class="section3-1-container">
@@ -203,33 +214,21 @@
       </div>
     </div>
 
-    <div class="footer-navs">
-      <ul class="footer-nav-links">
-        <li class="footer-item">
-          <a href="#" class="footer-link">About Us</a></li>
-        <li class="footer-item">
-          <a href="#" class="footer-link">Contact</a></li>
-        <li class="footer-item">
-          <a href="#" class="footer-link">Blog</a></li>
+    <nav>
+      <ul class="footer-nav">
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Support</a>
+        <a href="#">Privacy policy</a>
       </ul>
-    </div>
-
-    <div class="footer-navs">
-      <ul class="footer-nav-links">
-        <li class="footer-item">
-          <a href="#" class="footer-link
-          ">Careers</a></li>
-        <li class="footer-item">
-          <a href="#" class="footer-link">Support</a></li>
-        <li class="footer-item">
-          <a href="#" class="footer-link">Privacy policy</a></li>
-      </ul>
-    </div>
+    </nav>
 
     <div class="button-and-copyrights">
       <a href="#">
-        <button class="invite1-btn">Request Invite</button>
-        </a>
+        <button class="invite3-btn">Request Invite</button>
+      </a>
       <p class="footer-copyright">© Easybank. All Rights Reserved</p>
     </div>
   </footer>
@@ -239,5 +238,14 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Nthiga mukundi</a>.
   </div>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.querySelector("nav");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>

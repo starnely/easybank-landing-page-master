@@ -1,68 +1,76 @@
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 /* General reset: removes default browser padding & margins */
-* {
-    margin: 0;
-    padding: 0;
+*, 
+*::after, 
+*::before {
     box-sizing: border-box;
 }
 body main{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    line-height: 1.6;
 }
-/*Header section with navbar inside-->*/
-.my-header{
-    width: 100%;
-    background-color: lightblue;
-    position: sticky;
-    top: 0;
-    right: 0;
-    z-index: 1000;
 
-    padding: 30px 30px;
+/*Header section with navbar inside-->*/
+header{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+}
+
+.my-header{
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 4rem;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: auto;
 }
+
 .logo{
-    margin-left: 50px;
-    height: 50px
+    height: 22px;
+    
+}
+/* Hide menu icon on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  margin-left: auto;
 }
 
 /*making nav bar link responsive*/
 
-.nav-links{
+.nav-bar .nav-links{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    list-style: none;
+    gap: 1.5rem;
 }
-.nav-links:last-child{
-    margin-right: 0;
+
+.nav-bar .nav-links .nav-item{
+    font-size: 1.4rem;
+    
 }
-.nav-links .nav-item{
-    margin: 0 20px;
-    list-style-type: none;
-    font-size: 3rem;
-}
-.nav-links .nav-item .link{
+.nav-bar .nav-links .nav-item .link{
     text-decoration: none; /* Removes default underline */
     color: #333;
-    padding: 10px 0; /* Gives space for the dash below */
-    display: block;
-    position: relative;/* Crucial for positioning the ::after element */
+    padding: 2rem 0.2rem; /* Gives space for the dash below */
+
+    position: relative;
 }
 
 /* Creating the Green Dash (Pseudo-element) */
-.nav-links .nav-item .link::after{
+.nav-bar .nav-links .nav-item .link::after{
     content: ''; /* Required for pseudo-elements */
     position: absolute;
     width: 0; /* Start with zero width */
-    height: 5px; /* Thickness of the dash */
+    height: 3px; /* Thickness of the dash */
     display: block;
     margin-top: 5px; /* Spacing between text and dash */
     background: green; /* The color of the dash */
@@ -71,155 +79,146 @@ body main{
     /* Alternative for center alignment: left: 50%; transform: translateX(-50%); */
 }
 /* The Hover Effect: Expand the Dash */
-.nav-links .nav-item .link:hover::after {
+.nav-bar .nav-links .nav-item .link:hover::after {
     width: 100%; /* Expands the dash to full width of the link */
 }
 
 /* invite Buton*/
-.invite1-btn{
-    background-color:hsl(136, 65%, 51%) ;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 38px;
-    margin-right: 80px;
+.invite1-btn, 
+.invite2-btn, 
+.invite3-btn{
+    background:linear-gradient(135deg, #31d35c, #2bb7da);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 34px;
+    border: none;
 }
+.invite1-btn:hover, 
+.invite2-btn:hover, 
+.invite3-btn:hover{
+  opacity: 0.80;
+}
+
+
 
 /* section one*/
 .section1{
-  width: 100%;               /* Full width of laptop */
-  max-width: 100%;           /* Prevent shrinking */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 90px 90px;             /* Space inside the section */
-  overflow: hidden;          /* Hide overflow from overlapping images */
-  box-sizing: border-box;
-  /* Optional (remove if not needed) */
+    background-color: rgb(243, 243, 243);      
+    padding-left: 4rem;
+    overflow: visible;
 }
-.section1-1-container{
-    width: 45%;
+
+.section1-container{
+    max-width: 1200px;      
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
-.section1-1-container h1{
-    font-size: 4rem;
-  line-height: 1.2;
-  margin-bottom: 20px;
+.section1-container-left{
+    flex: 1;
 }
-.section1-1-container .explanation{
-    line-height: 1.6;
-    color: hsl(233, 8%, 62%);
-    margin-bottom: 30px;
-    font-size: 3rem;
+  
+.section1-container-left h1{
+    font-size: 2rem;
     
 }
-.invite2-btn{
-    background-color:green ;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 38px;
-    margin-right: 80px;
-    cursor: pointer;
-    font-size: 34px;
+.section1-container-left .explanation{
+    color: hsl(233, 8%, 62%);
+    font-size: 1rem;
 }
-.section1-2-container{
+.section1-container-right{
+    flex: 1;
     position: relative;
-    width: 55%;
     height: 500px;   /* Small, controlled height */
-    overflow: visible;
-
 }
 .intro-image1{
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
 }
 .intro-image2{
-   width: 90%;
+    width: 100%;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   z-index: 2;
+  height: 100%;
+  object-fit: cover;
+  object-position:center;
+  overflow: visible;
 }
 
 /*section2*/
 .section2{
-    background-color: rgb(248, 244, 244)
+    background-color: rgb(233, 231, 231);
+    padding: 1rem 5rem;
 }
-.section2-top-container{
-    padding-left: 90px;
-}
+
 .section2-top-container h2{
-    font-size: 4rem;
-    margin-bottom: 20px;
-    padding-top: 70px;
+    font-size: 1.4rem;
     color: rgb(61, 59, 59);
 }
 .section2-top-container p{
-    font-size: 3rem;
+    font-size: 1rem;
     color: gray;
 }
 .section2-grid{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap:2rem;
-    padding: 90px 90px;
+    gap:0.5rem;
 }
 .section2-container {
     width: 100%;
 }
-.section2-container .section2-images{
-    height: 150px;
-    width: 150px;
-    margin-bottom: 20px;
-}
+
 .section2-container h3{
-    font-size: 40px;
-    margin-bottom: 30px;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 .section2-container p{
-    font-size: 34px;
-    line-height: 1.8;
+    font-size: 1rem;
     color: gray;
 }
 
 /*section3*/
+.section3{
+    padding: 1rem 5rem;
+    background-color: rgb(243, 243, 243);
+}
 .article{
-    font-size: 4rem;
-    margin-bottom: 20px;
-    padding-left: 90px;
-    padding-top: 90px;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
     color: rgb(61, 59, 59);;
 }
 .section3-grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 90px 90px;
+    gap: 0.5rem;
 }
 .image-wrapper{
-      /* This ensures all wrappers have the same height as the tallest one in the row */
-  height: 400px; /* Or any fixed or responsive height you desire, e.g., 20vh */
-  overflow: hidden; /* Hides the cropped parts of the image */
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
 }
 .section3-images{
     width: 100%;
     height: 100%;
-    /* Scales the image to cover the entire container while maintaining aspect ratio */
-    object-fit: cover;
-    /* Centers the image within the container */
-    object-position: center;
+    object-fit: cover;/* Scales the image to cover the entire container while maintaining aspect ratio */
+    object-position: center;/* Centers the image within the container */
 }
 .article-text p{
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.8rem;
 }
 .article-text .h3{
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
 }
 .h3-link{
     color: rgb(48, 46, 46);
@@ -229,7 +228,7 @@ body main{
     color: #16bd16;
 }
 .article-text p{
-    font-size: 2rem;
+    font-size: 1rem;
     color: gray;
 }
 
@@ -237,7 +236,7 @@ body main{
 /* footer section*/
 .bank-footer{
     background-color: rgb(33, 33, 54);
-    padding: 5px 20px 30px 5px;
+    padding: 0.5rem 5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -246,61 +245,47 @@ body main{
 
 .bank-footer p{
     color: white;
-    margin-top: 20px;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 .logo-and-icons{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    padding: 0;
-    margin: 0;
+    gap: 2rem;
 }
 .footer-logo{
-    margin-bottom: 20px;
     width: 100%;
-    height: 50px;
+}
+.footer-icons{
+    display: flex;
+    gap: 1rem; 
+  }
+/*FOOTER NAV*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-nav{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem;
+}
+.footer-nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-.image-link .footer-icon-image {
-    /* Initial color (white) */
-    fill: #FFFFFF;
-    /* Smooth transition effect */
-    transition: fill 0.3s ease;
-    height: 40px;
-}
-
-.image-link:hover .footer-icon-image {
-    fill: #00FF00;  
-}
-
-.footer-item{
-    margin:15px 0;
-}
-
-.footer-link:hover{
+.footer-nav a:hover{
     color: greenyellow;
     transition: width 0.3s ease-out; /* Smooth transition for the width change */
 }
-
-.footer-navs, .footer-nav-links li a{
-    color: white;
-    text-decoration: 0;
-    list-style-type: none;
-    font-size: 2rem;
-}
-.footer-navs, .footer-nav-links li {
-    list-style-type: none;
-}
+/*FOOTER BUTTON AND COPYRIGHTS*/
 .button-and-copyrights{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.footer-copyrigh{
-    margin-right: 60px;
-    margin-top: 20px;
-}
+
 
