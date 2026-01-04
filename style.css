@@ -1,89 +1,87 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+html{
+    font-size: 100%;
+}
 /* General reset: removes default browser padding & margins */
 *, 
 *::after, 
 *::before {
     box-sizing: border-box;
-}
-body, p {
-    font-family: 'Public Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 1440px;
     margin: 0;
     padding: 0;
-    
 }
-
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    /* max-width: 1440px;  */
+}
+.body-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
 /*Header section with navbar inside-->*/
 header{
     position: fixed;
-    top: 0;
     z-index: 1000;
-    background-color: #ffffff;
+    background-color: hsl(240, 7%, 87%);
     border-bottom: 1px solid #e5e5e5;
-    width: 100%;
+    width: 90%;
 }
 
-.my-header{
-    max-width: 1440px;
-    margin: auto;
-    padding: 1rem 4rem;
-
+.header-nav{
+    /* max-width: 1440px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem 5rem;
 }
-
 .logo{
-    height: 22px;
+    width: 150px;
     
 }
 /* Hide menu icon on desktop */
 .menu-toggle {
   display: none;
-  font-size: 1.7rem;
-  cursor: pointer;
-  margin-left: auto;
 }
 
 /*making nav bar link responsive*/
-
-.nav-bar .nav-links{
+.header-navbar ul{
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
 }
-
-.nav-bar .nav-links .nav-item{
-    font-size: 1.4rem;
-    
-}
-.nav-bar .nav-links .nav-item .link{
+.header-navbar ul .link{
     text-decoration: none; /* Removes default underline */
-    color: hsl(233, 26%, 24%);
-    padding: 2rem 0.2rem; /* Gives space for the dash below */
+    /* color: hsl(233, 26%, 24%); */
+    padding: 2.5rem 0.5rem; /* Gives space for the dash below */
 
     position: relative;
 }
 
 /* Creating the Green Dash (Pseudo-element) */
-.nav-bar .nav-links .nav-item .link::after{
+.header-navbar ul .link::after{
     content: ''; /* Required for pseudo-elements */
     position: absolute;
     width: 0; /* Start with zero width */
     height: 3px; /* Thickness of the dash */
     display: block;
-    margin-top: 5px; /* Spacing between text and dash */
+    margin-top: 0.5rem; /* Spacing between text and dash */
     background: hsl(136, 65%, 51%); /* The color of the dash */
     transition: width 0.3s ease-out; /* Smooth transition for the width change */
     left: 0; /* Aligns the dash to the left of the link text */
     /* Alternative for center alignment: left: 50%; transform: translateX(-50%); */
 }
 /* The Hover Effect: Expand the Dash */
-.nav-bar .nav-links .nav-item .link:hover::after {
+.header-navbar ul .link:hover::after {
     width: 100%; /* Expands the dash to full width of the link */
 }
 
@@ -93,7 +91,7 @@ header{
 .invite3-btn{
     background:linear-gradient(135deg, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
     color: hsl(0, 0%, 100%);
-    padding: 0.7rem 1.5rem;
+    padding: 1rem 2rem;
     border-radius: 25px;
     cursor: pointer;
     border: none;
@@ -110,12 +108,13 @@ header{
 .section1{
     background-color: hsl(220, 16%, 96%);      
     padding-left: 4rem;
-    overflow: visible;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow: visible; */
 }
 
-.section1-container{
-    max-width: 1440px;      
-    margin: 0 auto;
+.section1-container{      
+    /* margin: 0 auto; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -131,12 +130,13 @@ header{
 }
 .section1-container-left .explanation{
     color: hsl(233, 8%, 62%);
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 .section1-container-right{
     flex: 1;
     position: relative;
-    height: 500px;   /* Small, controlled height */
+    height: 31rem;/*all, controlled height */
 }
 .intro-image1{
   width: 100%;
@@ -149,14 +149,14 @@ header{
   z-index: 1;
 }
 .intro-image2{
-    width: 100%;
+width: 100%;
+height: 100%;
+  object-fit: cover;
+  object-position:center;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 2;
-  height: 100%;
-  object-fit: cover;
-  object-position:center;
   overflow: visible;
 }
 
@@ -167,28 +167,28 @@ header{
 }
 
 .section2-top-container h2{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: hsl(233, 26%, 24%);
 }
 .section2-top-container p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: hsl(233, 8%, 62%);
 }
 .section2-grid{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap:0.5rem;
+    gap:1rem;
 }
-.section2-container {
+/* .section2-container {
     width: 100%;
-}
+} */
 
 .section2-container h3{
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
 }
 .section2-container p{
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: hsl(233, 8%, 62%);
 }
 
@@ -198,31 +198,31 @@ header{
     background-color: hsl(220, 16%, 96%);
 }
 .article{
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.3rem;
     color: hsl(233, 26%, 24%);
 }
 .section3-grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
+    gap: 1rem;
 }
 .image-wrapper{
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
 }
 .section3-images{
     width: 100%;
-    height: 100%;
+    height: 10rem;
     object-fit: cover;/* Scales the image to cover the entire container while maintaining aspect ratio */
     object-position: center;/* Centers the image within the container */
 }
-.article-text p{
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-}
+/* .article-text p{
+    font-size: 1.2rem;
+    
+} */
 .article-text .h3{
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 .h3-link{
     color: hsl(233, 26%, 24%);
@@ -232,7 +232,8 @@ header{
     color: #16bd16;
 }
 .article-text p{
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
     color: hsl(233, 8%, 62%);
 }
 
@@ -240,7 +241,7 @@ header{
 /* footer section*/
 .bank-footer{
     background-color: hsl(233, 26%, 24%);
-    padding: 0.5rem 5rem;
+    padding: 1rem 5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -249,7 +250,7 @@ header{
 
 .bank-footer p{
     color: hsl(0, 0%, 100%);
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 .logo-and-icons{
     display: flex;
@@ -277,7 +278,7 @@ nav{
 .footer-nav a{
     color: hsl(0, 0%, 100%);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;  
 }
 
 .footer-nav a:hover{
@@ -290,6 +291,7 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
 }
 
 
