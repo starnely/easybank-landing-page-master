@@ -32,7 +32,7 @@ body {
 header{
     position: fixed;
     z-index: 1000;
-    background-color: hsl(240, 7%, 87%);
+    background-color: hsl(220, 16%, 96%);
     border-bottom: 1px solid #e5e5e5;
     width: 90%;
 }
@@ -44,9 +44,11 @@ header{
     justify-content: space-between;
     padding: 1rem 5rem;
 }
-.logo{
-    width: 150px;
-    
+.header-logo{
+    color: hsl(233, 8%, 62%);
+}
+.footer-logo{
+    color: hsl(0, 0%, 100%);
 }
 /* Hide menu icon on desktop */
 .menu-toggle {
@@ -269,6 +271,12 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.social-media-icon{
+    color: hsl(220, 16%, 96%);
+}
+.social-media-icon:hover{
+    color: hsl(136, 65%, 51%);
 }
 .footer-nav{
     display: grid;
